@@ -81,7 +81,7 @@ have to register on the platform.*
 Get your individual endpoint
 here [**https://www.ankr.com/rpc/advanced-api**](https://www.ankr.com/rpc/advanced-api) and
 provide it to the AnkrProvider constructor.
-
+```
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -192,16 +192,16 @@ Web3.providers.HttpProvider(url));</p>
 <tbody>
 </tbody>
 </table>
-
+```
 **File:** ./apis.ts
-
+```
 import { AnkrProvider } from '@ankr.com/ankr.js';
 
 import type { Blockchain } from '@ankr.com/ankr.js/dist/types';
 
 const provider = new
-AnkrProvider('https://rpc.ankr.com/multichain/4035658e3524cbfe76215a86b745adc08ceae558d1fadc11aa501f5af4179178');
-
+AnkrProvider('https://rpc.ankr.com/multichain/<ankrid>');
+```
 ### Step 3: Create Function to Fetch Total Balance
 
 In this step, we will first create a getAccountBalance function in
@@ -209,7 +209,7 @@ the ./apis.ts file, which will accept a walletAddress, and return the
 coin and the respective token balance. Here we are going to utilize
 the [getAccountBalance](https://documenter.getpostman.com/view/19024547/UVsEVUGQ#74b5cc68-fba2-415c-a53b-28c08818f970)↗
 method provided by Ankr.js.
-
+```
 //getAccountBalance function to fetch coins and their respective token
 balances
 
@@ -222,11 +222,11 @@ export const getAccountBalance = async (walletAddress: string) =\> {
     });
 
 };
-
+```
 Let's call this function on our page i.e. ./page.tsx to check the
 account balances. To do so, clear the code from the **index.tsx** file
 and replace it with the one given below:
-
+```
 "use client"; // This is a client component
 
 import { useEffect, useState } from 'react';
@@ -270,7 +270,7 @@ console.log({ tempTotal });
   );
 
 }
-
+```
 <img src="./media/image4.png" style="width:5.125in;height:1.80208in" />
 
 Check console. You should be able to see the list of chains with their
@@ -287,7 +287,7 @@ create a new function in the apis.ts file and let's call
 it **getTotalMultichainBalance**.
 
 File: ./apis.ts
-
+```
 //getAccountBalance function to fetch coins and their respective token
 balances
 
@@ -333,11 +333,11 @@ export const getTotalMultichainBalance = async (walletAddress: string)
     return { total, breakup };
 
 };
-
+```
 Let's call this function on our page to check the total account balance.
 
 Add sections in the page.tsx
-
+```
 "use client"; // This is a client component
 
 import { useEffect, useState } from 'react';
@@ -405,7 +405,7 @@ export default function Home() {
   );
 
 }
-
+```
 <img src="./media/image7.png" style="width:6.5in;height:2.24861in" />
 
 Now I did some more changes
@@ -415,7 +415,7 @@ In UI
 - I now added a textbox to enter the account
 
 - A button that will trigger a re-fetch of balances
-
+```
 "use client"; // This is a client component
 
 import { useEffect, useState } from 'react';
@@ -534,7 +534,7 @@ dark:focus:ring-blue-800"\>Get Details for account\</button\>
   );
 
 }
-
+```
 Here is how it looks finally
 
 <img src="./media/image8.png"
