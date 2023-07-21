@@ -39,15 +39,15 @@ and [Yarn](https://yarnpkg.com/)↗ installed on your machine.
 First up, navigate into the directory of your choice where you want to
 initiate this project and run the following command in your terminal to
 set up a new Next.js starter page:
-
+```
 npm create next-app --ts ankrjs-account-balance
-
+```
 You'll be able to see a couple of files and folders being created for
 you. Let's dive into the newly created directory and start the
 development server on localhost:3000.
-
+```
 npm run dev
-
+```
 Visit localhost:3000 to view the starter application and it will
 resemble the screen attached below:
 
@@ -59,9 +59,9 @@ In this section, we will install and set up Ankr.js for querying account
 balances across multichains.
 
 We will start by installing the ankr.js package from npm:
-
+```
 npm install @ankr.com/ankr.js
-
+```
 <img src="./media/image2.png" style="width:6.5in;height:1.46389in" />
 
 Powershell is the reason for this issue. We need to do this on command
@@ -81,7 +81,7 @@ have to register on the platform.*
 Get your individual endpoint
 here [**https://www.ankr.com/rpc/advanced-api**](https://www.ankr.com/rpc/advanced-api) and
 provide it to the AnkrProvider constructor.
-```
+
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -192,7 +192,7 @@ Web3.providers.HttpProvider(url));</p>
 <tbody>
 </tbody>
 </table>
-```
+
 **File:** ./apis.ts
 ```
 import { AnkrProvider } from '@ankr.com/ankr.js';
